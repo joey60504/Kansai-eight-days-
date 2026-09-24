@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>京阪神八天七夜｜10/13–10/20</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0a1628;
+      --ink-2: #132338;
+      --mist: #dce6ef;
+      --paper: #f3f6f9;
+      --vermilion: #d6452f;
+      --vermilion-deep: #a83322;
+      --gold: #c9a46a;
+      --teal: #2f6f6a;
+      --muted: #5c6b7a;
+      --line: rgba(10, 22, 40, 0.12);
+      --shadow: 0 18px 50px rgba(10, 22, 40, 0.18);
+      --font-display: "Shippori Mincho", "Noto Serif TC", serif;
+      --font-body: "Zen Kaku Gothic New", "Noto Sans TC", sans-serif;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--teal); }
+    button { font: inherit; }
+
+    /* —— Hero —— */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      color: #fff;
+      background: var(--ink);
+    }
+    .hero__media {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(10,22,40,0.25) 0%, rgba(10,22,40,0.55) 45%, rgba(10,22,40,0.92) 100%),
+        url("https://images.unsplash.com/photo-1493976040374-85c8e21d8175?auto=format&fit=crop&w=2000&q=80")
+        center / cover no-repeat;
+      transform: scale(1.06);
+      animation: heroZoom 18s var(--ease) forwards;
+    }
+    .hero__grain {
+      position: absolute;
+      inset: 0;
+      opacity: 0.18;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      mix-blend-mode: soft-light;
+    }
+    .hero__content {
+      position: relative;
+      z-index: 1;
+      width: min(1100px, calc(100% - 2.5rem));
+      margin: 0 auto 4.5rem;
+      padding-top: 5rem;
+    }
+    .hero__brand {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 8vw, 5.4rem);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1.05;
+      margin: 0 0 1rem;
+      opacity: 0;
+      transform: translateY(28px);
+      animation: rise 1s var(--ease) 0.15s forwards;
+    }
+    .hero__headline {
+      margin: 0 0 0.75rem;
+      font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: rise 1s var(--ease) 0.35s forwards;
+    }
+    .hero__lead {
+      margin: 0 0 1.75rem;
+      max-width: 28rem;
+      color: rgba(255,255,255,0.82);
+      font-size: 1rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: rise 1s var(--ease) 0.5s forwards;
+    }
+    .hero__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.9rem 1.4rem;
+      border: 0;
+      border-radius: 999px;
+      background: var(--vermilion);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      box-shadow: 0 12px 30px rgba(214,69,47,0.35);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: rise 1s var(--ease) 0.65s forwards;
+      transition: background 0.25s var(--ease), transform 0.25s var(--ease);
+    }
+    .hero__cta:hover {
+      background: var(--vermilion-deep);
+      transform: translateY(-2px);
+    }
+    .hero__meta {
+      position: absolute;
+      top: 1.4rem;
+      right: 1.4rem;
+      z-index: 2;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      color: rgba(255,255,255,0.75);
+      opacity: 0;
+      animation: rise 1s var(--ease) 0.8s forwards;
+    }
+
+    @keyframes rise {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes heroZoom {
+      to { transform: scale(1); }
+    }
+
+    /* —— Day nav —— */
+    .day-nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(243,246,249,0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .day-nav {
+      display: flex;
+      gap: 0.45rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+      width: min(1100px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 0.75rem 0;
+    }
+    .day-nav::-webkit-scrollbar { display: none; }
+    .day-nav button {
+      flex: 0 0 auto;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--muted);
+      padding: 0.55rem 0.9rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.25s var(--ease);
+      white-space: nowrap;
+    }
+    .day-nav button strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      color: var(--ink);
+      font-weight: 700;
+    }
+    .day-nav button span {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      max-width: 7.5rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .day-nav button[aria-selected="true"] {
+      background: var(--ink);
+      color: rgba(255,255,255,0.7);
+    }
+    .day-nav button[aria-selected="true"] strong { color: #fff; }
+    .day-nav button:hover:not([aria-selected="true"]) {
+      background: #fff;
+      border-color: var(--line);
+    }
+
+    /* —— Main —— */
+    main {
+      width: min(1100px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2.25rem 0 5rem;
+    }
+    .day-panel {
+      display: none;
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    .day-panel.is-active {
+      display: block;
+      animation: panelIn 0.55s var(--ease) forwards;
+    }
+    @keyframes panelIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .day-head {
+      display: grid;
+      gap: 0.6rem;
+      margin-bottom: 1.6rem;
+      padding-bottom: 1.4rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .day-head__kicker {
+      margin: 0;
+      color: var(--vermilion);
+      letter-spacing: 0.2em;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+    .day-head h2 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      line-height: 1.25;
+    }
+    .day-head__theme {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+    .day-notes {
+      margin: 0.4rem 0 0;
+      padding: 0.85rem 1rem;
+      background: linear-gradient(120deg, rgba(214,69,47,0.08), rgba(47,111,106,0.08));
+      border-left: 3px solid var(--vermilion);
+      color: var(--ink-2);
+      font-size: 0.92rem;
+    }
+    .day-notes li { margin: 0.15rem 0; }
+
+    .outline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0 0 2rem;
+      padding: 0;
+      list-style: none;
+    }
+    .outline li {
+      display: flex;
+      gap: 0.45rem;
+      align-items: baseline;
+      max-width: 100%;
+      padding: 0.45rem 0.7rem;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 0.35rem;
+      font-size: 0.86rem;
+    }
+    .outline .tag {
+      flex: 0 0 auto;
+      color: var(--vermilion);
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+    }
+    .outline .txt {
+      color: var(--ink-2);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 22rem;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 0.9rem;
+      padding-left: 1.15rem;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 0.28rem;
+      top: 0.4rem;
+      bottom: 0.4rem;
+      width: 2px;
+      background: linear-gradient(180deg, var(--vermilion), var(--teal));
+      opacity: 0.45;
+    }
+
+    .block {
+      position: relative;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.55s var(--ease), transform 0.55s var(--ease);
+    }
+    .block.is-in {
+      opacity: 1;
+      transform: none;
+    }
+    .block::before {
+      content: "";
+      position: absolute;
+      left: -1.02rem;
+      top: 1.15rem;
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid var(--vermilion);
+      box-shadow: 0 0 0 3px rgba(214,69,47,0.15);
+    }
+    .block--transport::before {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(47,111,106,0.15);
+    }
+
+    .place {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 0.85rem;
+      padding: 1.05rem 1.15rem 1.15rem;
+      box-shadow: 0 8px 24px rgba(10,22,40,0.04);
+    }
+    .place__time {
+      margin: 0 0 0.25rem;
+      color: var(--vermilion);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+    }
+    .place__title {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+    .place__notes,
+    .item__notes,
+    .transport__notes {
+      margin: 0.7rem 0 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .place__notes li,
+    .item__notes li,
+    .transport__notes li,
+    .transport ol li { margin: 0.2rem 0; }
+
+    .items {
+      margin: 0.85rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.55rem;
+    }
+    .items > li {
+      padding: 0.55rem 0.7rem;
+      background: var(--paper);
+      border-radius: 0.45rem;
+    }
+    .items .name {
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .refs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.75rem;
+    }
+    .refs a {
+      font-size: 0.8rem;
+      text-decoration: none;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(47,111,106,0.1);
+      color: var(--teal);
+      font-weight: 500;
+    }
+
+    .transport {
+      padding: 0.85rem 1rem;
+      border-radius: 0.75rem;
+      background: linear-gradient(135deg, rgba(47,111,106,0.1), rgba(10,22,40,0.04));
+      border: 1px dashed rgba(47,111,106,0.35);
+    }
+    .transport__label {
+      margin: 0 0 0.35rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: var(--teal);
+    }
+    .transport__route {
+      margin: 0;
+      font-weight: 700;
+      font-size: 0.98rem;
+    }
+    .transport ol {
+      margin: 0.55rem 0 0;
+      padding-left: 1.15rem;
+      color: var(--ink-2);
+      font-size: 0.9rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 1.5rem 1rem 2.5rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      .hero__content { margin-bottom: 3.2rem; }
+      .outline .txt { max-width: 14rem; white-space: normal; }
+      .day-nav button span { max-width: 5.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__media" aria-hidden="true"></div>
+    <div class="hero__grain" aria-hidden="true"></div>
+    <p class="hero__meta">10/13 — 10/20</p>
+    <div class="hero__content">
+      <h1 class="hero__brand">京阪神八天七夜</h1>
+      <p class="hero__headline">OSAKA · KOBE · KYOTO</p>
+      <p class="hero__lead">從難波到嵐山、從神戶夜景到伏見鳥居——八天行程與交通，一本翻完。</p>
+      <a class="hero__cta" href="#itinerary">查看行程 <span aria-hidden="true">↓</span></a>
+    </div>
+  </header>
+
+  <div class="day-nav-wrap" id="itinerary">
+    <nav class="day-nav" id="dayNav" aria-label="每日行程"></nav>
+  </div>
+
+  <main id="dayMain"></main>
+
+  <footer>京阪神八天七夜</footer>
+
+  <script src="./itinerary-data.js"></script>
+  <script>
+    const THEMES = {
+      1: "大阪城・難波",
+      2: "環球影城",
+      3: "勝尾寺・心齋橋",
+      4: "神戶一日",
+      5: "宇治・teamLab",
+      6: "嵐山・金閣",
+      7: "和服東山",
+      8: "伏見・返台",
+    };
+
+    const nav = document.getElementById("dayNav");
+    const main = document.getElementById("dayMain");
+    const days = window.ITINERARY || [];
+
+    function esc(s) {
+      return String(s ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function linkify(text) {
+      return esc(text).replace(
+        /(https?:\/\/[^\s]+)/g,
+        '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>'
+      );
+    }
+
+    function notesList(notes) {
+      if (!notes?.length) return "";
+      return `<ul class="place__notes">${notes.map((n) => `<li>${linkify(n)}</li>`).join("")}</ul>`;
+    }
+
+    function renderItems(items) {
+      if (!items?.length) return "";
+      return `<ul class="items">${items
+        .map(
+          (it) => `<li>
+            <div class="name">${esc(it.name)}</div>
+            ${
+              it.notes?.length
+                ? `<ul class="item__notes">${it.notes
+                    .map((n) => `<li>${linkify(n)}</li>`)
+                    .join("")}</ul>`
+                : ""
+            }
+          </li>`
+        )
+        .join("")}</ul>`;
+    }
+
+    function renderRefs(refs) {
+      if (!refs?.length) return "";
+      return `<div class="refs">${refs
+        .map(
+          (u, i) =>
+            `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">參考 ${i + 1}</a>`
+        )
+        .join("")}</div>`;
+    }
+
+    function renderSection(sec) {
+      if (sec.kind === "transport") {
+        return `<article class="block block--transport">
+          <div class="transport">
+            <p class="transport__label">交通</p>
+            <p class="transport__route">${esc(sec.title)}</p>
+            ${
+              sec.steps?.length
+                ? `<ol>${sec.steps.map((s) => `<li>${linkify(s)}</li>`).join("")}</ol>`
+                : ""
+            }
+            ${
+              sec.notes?.length
+                ? `<ul class="transport__notes">${sec.notes
+                    .map((n) => `<li>${linkify(n)}</li>`)
+                    .join("")}</ul>`
+                : ""
+            }
+          </div>
+        </article>`;
+      }
+
+      return `<article class="block">
+        <div class="place">
+          ${sec.time ? `<p class="place__time">${esc(sec.time)}</p>` : ""}
+          <h3 class="place__title">${esc(sec.title)}</h3>
+          ${notesList(sec.notes)}
+          ${renderItems(sec.items)}
+          ${renderRefs(sec.refs)}
+        </div>
+      </article>`;
+    }
+
+    function renderDay(day) {
+      const theme = day.theme || THEMES[day.day] || "";
+      return `<section class="day-panel" id="day-${day.day}" data-day="${day.day}" hidden>
+        <header class="day-head">
+          <p class="day-head__kicker">DAY ${String(day.day).padStart(2, "0")} · ${esc(day.date)}</p>
+          <h2>${esc(theme || day.title)}</h2>
+          <p class="day-head__theme">${esc(day.title)}</p>
+          ${
+            day.notes?.length
+              ? `<ul class="day-notes">${day.notes
+                  .map((n) => `<li>${linkify(n)}</li>`)
+                  .join("")}</ul>`
+              : ""
+          }
+        </header>
+        <ul class="outline">
+          ${day.summary
+            .filter((s) => s.text)
+            .map(
+              (s) =>
+                `<li><span class="tag">${esc(s.label)}</span><span class="txt" title="${esc(
+                  s.text
+                )}">${esc(s.text)}</span></li>`
+            )
+            .join("")}
+        </ul>
+        <div class="timeline">
+          ${day.sections.map(renderSection).join("")}
+        </div>
+      </section>`;
+    }
+
+    function selectDay(n) {
+      const buttons = [...nav.querySelectorAll("button")];
+      buttons.forEach((btn) => {
+        const on = Number(btn.dataset.day) === n;
+        btn.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      [...main.querySelectorAll(".day-panel")].forEach((panel) => {
+        const on = Number(panel.dataset.day) === n;
+        panel.classList.toggle("is-active", on);
+        panel.hidden = !on;
+      });
+      observeBlocks();
+      history.replaceState(null, "", `#day-${n}`);
+    }
+
+    function observeBlocks() {
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("is-in");
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+      );
+      main.querySelectorAll(".day-panel.is-active .block").forEach((el) => {
+        el.classList.remove("is-in");
+        io.observe(el);
+      });
+    }
+
+    // boot
+    nav.innerHTML = days
+      .map((d) => {
+        const label = d.theme || THEMES[d.day] || "";
+        return `<button type="button" data-day="${d.day}" aria-selected="false">
+          <strong>D${d.day}</strong>
+          <span>${esc(label)}</span>
+        </button>`;
+      })
+      .join("");
+
+    main.innerHTML = days.map(renderDay).join("");
+
+    nav.addEventListener("click", (e) => {
+      const btn = e.target.closest("button[data-day]");
+      if (!btn) return;
+      selectDay(Number(btn.dataset.day));
+      document.getElementById("itinerary").scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    const hashDay = Number((location.hash.match(/day-(\d+)/) || [])[1]);
+    selectDay(days.some((d) => d.day === hashDay) ? hashDay : days[0]?.day || 1);
+  </script>
+</body>
+</html>
