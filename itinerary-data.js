@@ -1581,7 +1581,7 @@ window.ITINERARY = [
       },
       {
         "label": "傍晚",
-        "text": "和服還衣（17:00）"
+        "text": "Dreamy Kimono Rental Kyoto Gion Shijo（17:00）"
       },
       {
         "label": "晚上",
