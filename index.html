@@ -147,6 +147,15 @@
       transform: translateY(20px);
       animation: rise 1s var(--ease) 0.5s forwards;
     }
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.55rem 0.6rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: rise 1s var(--ease) 0.65s forwards;
+    }
     .hero__cta {
       display: inline-flex;
       align-items: center;
@@ -160,14 +169,30 @@
       font-weight: 700;
       letter-spacing: 0.08em;
       box-shadow: 0 6px 18px rgba(42, 26, 16, 0.22);
-      opacity: 0;
-      transform: translateY(20px);
-      animation: rise 1s var(--ease) 0.65s forwards;
       transition: filter 0.25s var(--ease), transform 0.25s var(--ease), background 0.25s var(--ease);
     }
     .hero__cta:hover {
       filter: none;
       transform: translateY(-2px);
+      background: #fff8d0;
+    }
+    .hero__map {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.42rem 0.72rem;
+      border: 1px solid rgba(61, 42, 26, 0.12);
+      border-radius: 999px;
+      background: var(--cream);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      box-shadow: 0 4px 12px rgba(42, 26, 16, 0.16);
+      transition: transform 0.25s var(--ease), background 0.25s var(--ease);
+    }
+    .hero__map:hover {
+      transform: translateY(-1px);
       background: #fff8d0;
     }
     .hero__meta {
@@ -335,16 +360,29 @@
     }
     .outline li {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
-      align-items: center;
       max-width: 100%;
-      padding: 0.45rem 0.7rem;
+      padding: 0;
       background: rgba(255, 252, 243, 0.92);
       border: 1px solid var(--line);
       border-radius: 0.35rem;
       font-size: 0.86rem;
     }
+    .outline li:hover {
+      background: #fff8d0;
+      border-color: rgba(92, 58, 34, 0.28);
+    }
+    .outline__link,
+    .outline__static {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      align-items: center;
+      width: 100%;
+      padding: 0.45rem 0.7rem;
+      color: inherit;
+      text-decoration: none;
+    }
+    .outline__link { cursor: pointer; }
     .outline .tag {
       flex: 0 0 auto;
       color: var(--vermilion);
@@ -379,6 +417,7 @@
 
     .block {
       position: relative;
+      scroll-margin-top: 6.2rem;
       opacity: 0;
       transform: translateY(16px);
       transition: opacity 0.55s var(--ease), transform 0.55s var(--ease);
@@ -575,6 +614,7 @@
     }
     .maps__item {
       margin: 0;
+      scroll-margin-top: 5.5rem;
     }
     .maps__item figcaption {
       margin: 0 0 0.55rem;
@@ -649,7 +689,12 @@
       <h1 class="hero__brand">京阪神八天七夜</h1>
       <p class="hero__headline">OSAKA · KOBE · KYOTO</p>
       <p class="hero__lead">大阪、神戶、京都。</p>
-      <a class="hero__cta" href="#itinerary">查看行程 <span aria-hidden="true">↓</span></a>
+      <div class="hero__actions">
+        <a class="hero__cta" href="#itinerary">查看行程 <span aria-hidden="true">↓</span></a>
+        <a class="hero__map" href="#map-osaka">大阪地鐵圖</a>
+        <a class="hero__map" href="#map-kyoto">京都地鐵圖</a>
+        <a class="hero__map" href="#map-kobe">神戶地鐵圖</a>
+      </div>
     </div>
   </header>
 
@@ -662,15 +707,15 @@
   <section class="maps" aria-label="交通路線圖">
     <h2 class="maps__title">交通路線圖</h2>
     <div class="maps__list">
-      <figure class="maps__item">
+      <figure class="maps__item" id="map-osaka">
         <figcaption>大阪</figcaption>
         <img src="./images/map-osaka.png" alt="大阪 Metro 全線路線圖" loading="lazy" />
       </figure>
-      <figure class="maps__item">
+      <figure class="maps__item" id="map-kobe">
         <figcaption>神戶</figcaption>
         <img src="./images/map-kobe.png" alt="神戶鐵道路線圖" loading="lazy" />
       </figure>
-      <figure class="maps__item">
+      <figure class="maps__item" id="map-kyoto">
         <figcaption>京都</figcaption>
         <img src="./images/map-kyoto.png" alt="京都市營地下鐵暨沿線景點圖" loading="lazy" />
       </figure>
@@ -1134,10 +1179,92 @@
         .join("")}</div>`;
     }
 
-    function renderSection(sec, sections, index) {
+    function coreName(s) {
+      return String(s || "")
+        .replace(/（[^）]*）/g, "")
+        .replace(/\([^)]*\)/g, "")
+        .replace(/[＋+與&＆／/－—\-・·]/g, "")
+        .replace(/\s+/g, "")
+        .trim();
+    }
+
+    function nameParts(s) {
+      const base = String(s || "")
+        .replace(/（[^）]*）/g, "")
+        .replace(/\([^)]*\)/g, "");
+      return base
+        .split(/[＋+與&＆／/－—\-・·]/)
+        .map((p) => p.replace(/\s+/g, "").trim())
+        .filter((p) => p.length >= 3);
+    }
+
+    function pairScore(a, b) {
+      if (!a || !b) return 0;
+      if (a === b) return 1000 + a.length;
+      if (a.startsWith(b) || b.startsWith(a)) {
+        if (Math.abs(a.length - b.length) <= 2) return 700 + Math.min(a.length, b.length);
+      }
+      return 0;
+    }
+
+    function textScore(text, sec) {
+      const title = coreName(sec.title);
+      let best = pairScore(coreName(text), title);
+      (sec.items || []).forEach((it) => {
+        best = Math.max(best, pairScore(coreName(text), coreName(it.name)) - 5);
+      });
+      return best;
+    }
+
+    function sameSlot(secTime, label) {
+      if (!secTime) return false;
+      if (secTime === label) return true;
+      const alias = { 午餐: "中午", 中午: "中午" };
+      return (alias[secTime] || secTime) === (alias[label] || label);
+    }
+
+    function linkOutline(summary, sections) {
+      const places = sections
+        .map((sec, i) => ({ sec, i }))
+        .filter((x) => x.sec.kind === "place");
+      const pick = (text, label) => {
+        let bestI = -1;
+        let best = 0;
+        places.forEach(({ sec, i }) => {
+          let sc = textScore(text, sec);
+          if (!sc) return;
+          if (sameSlot(sec.time, label)) sc += 300;
+          if (sc > best) {
+            best = sc;
+            bestI = i;
+          }
+        });
+        return best >= 700 ? bestI : -1;
+      };
+      return (summary || [])
+        .filter((s) => s.text)
+        .map((s) => {
+          const label = String(s.label || "").trim();
+          let found = pick(s.text, label);
+          if (found < 0) {
+            for (const part of nameParts(s.text)) {
+              found = pick(part, label);
+              if (found >= 0) break;
+            }
+          }
+          if (found < 0) {
+            const slot = places.filter(({ sec }) => sameSlot(sec.time, label));
+            if (slot.length === 1) found = slot[0].i;
+          }
+          return { ...s, anchor: found >= 0 ? found : null };
+        });
+    }
+
+    function renderSection(sec, sections, index, dayNum) {
+      const anchorId = `sec-${dayNum}-${index}`;
       if (sec.kind === "transport") {
         const dirUrl = transportDirUrl(sec, sections, index);
-        return `<article class="block block--transport">
+        return `<article class="block block--transport" id="${anchorId}">
           <div class="transport">
             <p class="transport__label">交通</p>
             <p class="transport__route"><span>${esc(sec.title)}</span>${mapBtn(
@@ -1167,7 +1294,7 @@
         ? mapsSearchUrl(sec.title, [...(sec.notes || []), ...extraNotes])
         : null;
       const allNotes = [...(sec.notes || []), ...extraNotes];
-      return `<article class="block">
+      return `<article class="block" id="${anchorId}">
         <div class="place">
           ${sec.time ? `<p class="place__time">${esc(sec.time)}</p>` : ""}
           <h3 class="place__title"><span>${esc(sec.title)}${rkLogoForPlace(sec)}</span>${mapBtn(placeUrl, "地圖")}</h3>
@@ -1194,23 +1321,31 @@
           }
         </header>
         <ul class="outline">
-          ${day.summary
-            .filter((s) => s.text)
-            .map(
-              (s) =>
-                `<li><span class="tag">${esc(s.label)}</span><span class="txt" title="${esc(
-                  s.text
-                )}">${esc(s.text)}</span></li>`
-            )
+          ${linkOutline(day.summary, day.sections)
+            .map((s) => {
+              const inner = `<span class="tag">${esc(s.label)}</span><span class="txt" title="${esc(
+                s.text
+              )}">${esc(s.text)}</span>`;
+              if (s.anchor == null) return `<li><span class="outline__static">${inner}</span></li>`;
+              return `<li><a class="outline__link" href="#sec-${day.day}-${s.anchor}">${inner}</a></li>`;
+            })
             .join("")}
         </ul>
         <div class="timeline">
-          ${day.sections.map((sec, i) => renderSection(sec, day.sections, i)).join("")}
+          ${day.sections.map((sec, i) => renderSection(sec, day.sections, i, day.day)).join("")}
         </div>
       </section>`;
     }
 
-    function selectDay(n) {
+    function scrollToPageTop() {
+      const root = document.documentElement;
+      const prev = root.style.scrollBehavior;
+      root.style.scrollBehavior = "auto";
+      window.scrollTo(0, 0);
+      root.style.scrollBehavior = prev;
+    }
+
+    function selectDay(n, scrollTop) {
       const buttons = [...nav.querySelectorAll("button")];
       buttons.forEach((btn) => {
         const on = Number(btn.dataset.day) === n;
@@ -1223,6 +1358,10 @@
       });
       observeBlocks();
       history.replaceState(null, "", `#day-${n}`);
+      if (scrollTop) {
+        scrollToPageTop();
+        requestAnimationFrame(scrollToPageTop);
+      }
     }
 
     function observeBlocks() {
@@ -1260,8 +1399,17 @@
     nav.addEventListener("click", (e) => {
       const btn = e.target.closest("button[data-day]");
       if (!btn) return;
-      selectDay(Number(btn.dataset.day));
-      document.getElementById("itinerary").scrollIntoView({ behavior: "smooth", block: "start" });
+      selectDay(Number(btn.dataset.day), true);
+    });
+
+    main.addEventListener("click", (e) => {
+      const link = e.target.closest("a.outline__link");
+      if (!link) return;
+      const id = (link.getAttribute("href") || "").slice(1);
+      const target = id ? document.getElementById(id) : null;
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
     });
 
     const hashDay = Number((location.hash.match(/day-(\d+)/) || [])[1]);

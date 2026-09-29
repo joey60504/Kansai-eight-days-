@@ -137,7 +137,7 @@ window.ITINERARY = [
       {
         "kind": "place",
         "time": "早上",
-        "title": "大阪城",
+        "title": "大阪城週邊",
         "from": null,
         "to": null,
         "steps": [],
@@ -692,7 +692,7 @@ window.ITINERARY = [
       },
       {
         "kind": "place",
-        "time": "中午",
+        "time": "午餐",
         "title": "難波麵次郎（なにわ麺次郎／Naniwa Menjiro）",
         "from": null,
         "to": null,
@@ -831,7 +831,7 @@ window.ITINERARY = [
       {
         "kind": "place",
         "time": "傍晚",
-        "title": "PARCO與大丸百貨",
+        "title": "PARCO＋大丸百貨",
         "from": null,
         "to": null,
         "steps": [],
@@ -1056,7 +1056,7 @@ window.ITINERARY = [
       {
         "kind": "place",
         "time": "午餐",
-        "title": "神戶牛排 Propeller（11:00）",
+        "title": "神戶牛排 Propeller",
         "from": null,
         "to": null,
         "steps": [],
@@ -1259,12 +1259,12 @@ window.ITINERARY = [
   {
     "day": 5,
     "date": "10/17（週六）",
-    "theme": "木津市場 → 宇治 → teamLab（行李前晚寄京都）",
-    "title": "Day 5｜10/17（週六）｜木津市場 → 宇治 → teamLab（行李前晚寄京都）",
+    "theme": "木津市場 → 宇治 → teamLab",
+    "title": "Day 5｜10/17（週六）｜木津市場 → 宇治 → teamLab",
     "summary": [
       {
         "label": "出發",
-        "text": "家"
+        "text": "京阪難波格蘭德酒店"
       },
       {
         "label": "早上",
@@ -1272,27 +1272,19 @@ window.ITINERARY = [
       },
       {
         "label": "中午",
-        "text": "宇治 - 中村藤吉本店（抽號碼牌）"
+        "text": "宇治橋通商店街"
       },
       {
         "label": "下午",
-        "text": "宇治 - 宇治橋通商店街／平等院參道"
+        "text": "平等院"
       },
       {
         "label": "下午",
-        "text": "宇治 - 平等院"
-      },
-      {
-        "label": "下午",
-        "text": "宇治 - 宇治神社／宇治上神社"
-      },
-      {
-        "label": "點心",
-        "text": "宇治 - 中村藤吉本店"
+        "text": "宇治神社／宇治上神社"
       },
       {
         "label": "晚上",
-        "text": "teamLab Biovortex Kyoto"
+        "text": "teamLab Biovortex Kyoto（約 17:30–20:30）"
       },
       {
         "label": "晚餐",
@@ -1565,23 +1557,23 @@ window.ITINERARY = [
       },
       {
         "label": "清晨",
-        "text": "京都經典景點拍照（西向院）（06:00）"
+        "text": "京都經典景點拍照（西向院）"
       },
       {
         "label": "早上",
-        "text": "Dreamy Kimono Rental Kyoto Gion Shijo（預約 09:00–11:00）"
+        "text": "Dreamy Kimono Rental Kyoto Gion Shijo"
       },
       {
         "label": "中午",
-        "text": "東山區域逛街（11:00–13:00）"
+        "text": "東山區域逛街"
       },
       {
         "label": "下午",
-        "text": "八坂神社與攝影師（13:00–14:00）"
+        "text": "八坂神社與攝影師"
       },
       {
         "label": "傍晚",
-        "text": "Dreamy Kimono Rental Kyoto Gion Shijo（17:00）"
+        "text": "Dreamy Kimono Rental Kyoto Gion Shijo"
       },
       {
         "label": "晚上",
@@ -1589,7 +1581,7 @@ window.ITINERARY = [
       },
       {
         "label": "晚餐",
-        "text": "鳥せゑ 蛸藥師店（とりせゑ 蛸薬師店／Torisei Takoyakushi）（預約 20:00）"
+        "text": "鳥せゑ 蛸藥師店（とりせゑ 蛸薬師店／Torisei Takoyakushi）"
       },
       {
         "label": "回家",
@@ -1627,7 +1619,7 @@ window.ITINERARY = [
       {
         "kind": "place",
         "time": "清晨",
-        "title": "京都經典景點拍照（西向院／さいこういん）（06:00）",
+        "title": "京都經典景點拍照（西向院）",
         "from": null,
         "to": null,
         "steps": [],
@@ -1772,7 +1764,9 @@ window.ITINERARY = [
         "title": "東山 → 八坂神社",
         "from": "東山",
         "to": "八坂神社",
-        "steps": [],
+        "steps": [
+          "步行"
+        ],
         "notes": [],
         "items": [],
         "refs": []
@@ -1780,7 +1774,7 @@ window.ITINERARY = [
       {
         "kind": "place",
         "time": "下午",
-        "title": "八坂神社與攝影師（13:00–14:00）",
+        "title": "八坂神社與攝影師",
         "from": null,
         "to": null,
         "steps": [],
@@ -1801,7 +1795,9 @@ window.ITINERARY = [
         "title": "八坂神社 → Dreamy Kimono Rental Kyoto Gion Shijo",
         "from": "八坂神社",
         "to": "Dreamy Kimono Rental Kyoto Gion Shijo",
-        "steps": [],
+        "steps": [
+          "步行"
+        ],
         "notes": [],
         "items": [],
         "refs": []
@@ -1867,7 +1863,7 @@ window.ITINERARY = [
       {
         "kind": "place",
         "time": "晚餐",
-        "title": "鳥せゑ 蛸藥師店（とりせゑ 蛸薬師店／Torisei Takoyakushi）（預約 20:00）",
+        "title": "鳥せゑ 蛸藥師店（とりせゑ 蛸薬師店／Torisei Takoyakushi）",
         "from": null,
         "to": null,
         "steps": [],
@@ -1920,7 +1916,11 @@ window.ITINERARY = [
       },
       {
         "label": "清晨",
-        "text": "嵐山竹林／野宮神社"
+        "text": "嵐山竹林區域"
+      },
+      {
+        "label": "早上",
+        "text": "野宮神社（ののみやじんじゃ）"
       },
       {
         "label": "早上",
@@ -1956,7 +1956,7 @@ window.ITINERARY = [
       },
       {
         "label": "晚餐",
-        "text": "京之燒肉處 弘 三條木屋町店（京の焼肉処 弘 三条木屋町店）（預約 21:00）"
+        "text": "京之燒肉處 弘 三條木屋町店（京の焼肉処 弘 三条木屋町店）"
       },
       {
         "label": "回家",
@@ -2055,12 +2055,12 @@ window.ITINERARY = [
       {
         "kind": "place",
         "time": "早上",
-        "title": "拉拉熊茶房拿號（約 08:50）",
+        "title": "拉拉熊茶房拿號",
         "from": null,
         "to": null,
         "steps": [],
         "notes": [
-          "發券機約 10:00 開，餐廳 10:30 開。"
+          "約 08:50 到。發券機約 10:00 開，餐廳 10:30 開。"
         ],
         "items": [
           {
@@ -2163,7 +2163,7 @@ window.ITINERARY = [
       {
         "kind": "place",
         "time": "下午",
-        "title": "嵐山商店街",
+        "title": "渡月橋（とげつきょう）／嵐山商店街／中之島",
         "from": null,
         "to": null,
         "steps": [],
@@ -2263,11 +2263,12 @@ window.ITINERARY = [
       {
         "kind": "place",
         "time": "傍晚",
-        "title": "京都站前逛街（約 17:00–19:20）",
+        "title": "京都站前逛街",
         "from": null,
         "to": null,
         "steps": [],
         "notes": [
+          "約 17:00–19:20。",
           "前後站往返需走地下通道",
           "去後站走八條口",
           "去前站走中央通道",
@@ -2339,7 +2340,7 @@ window.ITINERARY = [
       {
         "kind": "place",
         "time": "晚餐",
-        "title": "京之燒肉處 弘 三條木屋町店（京の焼肉処 弘 三条木屋町店）（預約 21:00）",
+        "title": "京之燒肉處 弘 三條木屋町店（京の焼肉処 弘 三条木屋町店）",
         "from": null,
         "to": null,
         "steps": [],
@@ -2408,6 +2409,10 @@ window.ITINERARY = [
       {
         "label": "晚餐",
         "text": "牛かつもと村 LUCUA店（炸牛元村）"
+      },
+      {
+        "label": "晚上",
+        "text": "關西機場"
       },
       {
         "label": "回家",
@@ -2510,12 +2515,12 @@ window.ITINERARY = [
       {
         "kind": "place",
         "time": "下午",
-        "title": "梅田（約 14:00–18:00）",
+        "title": "梅田",
         "from": null,
         "to": null,
         "steps": [],
         "notes": [
-          "不要回京都再去關空。"
+          "約 14:00–18:00。"
         ],
         "items": [
           {
@@ -2584,7 +2589,7 @@ window.ITINERARY = [
           "大阪站搭 HARUKA 至關西空港站"
         ],
         "notes": [
-          "23:00 起飛，建議 19:30–20:00 到關空。約 18:00–18:30 從大阪站上車，不要賭末班。"
+          "23:00 起飛，20:00 到機場。"
         ],
         "items": [],
         "refs": []
