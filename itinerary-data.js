@@ -1556,8 +1556,363 @@ window.ITINERARY = [
   {
     "day": 6,
     "date": "10/18（週日）",
+    "theme": "和服東山",
+    "title": "Day 6｜10/18（週日）｜和服東山",
+    "summary": [
+      {
+        "label": "出發",
+        "text": "Travelodge Kyoto Shijo Karasuma"
+      },
+      {
+        "label": "清晨",
+        "text": "京都經典景點拍照（西向院）（06:00）"
+      },
+      {
+        "label": "早上",
+        "text": "Dreamy Kimono Rental Kyoto Gion Shijo（預約 09:00–11:00）"
+      },
+      {
+        "label": "中午",
+        "text": "東山區域逛街（11:00–13:00）"
+      },
+      {
+        "label": "下午",
+        "text": "八坂神社與攝影師（13:00–14:00）"
+      },
+      {
+        "label": "傍晚",
+        "text": "和服還衣（17:00）"
+      },
+      {
+        "label": "晚上",
+        "text": "拉拉熊專賣店 京都四條河原町店（リラックマストア 京都四条河原町店）"
+      },
+      {
+        "label": "晚餐",
+        "text": "鳥せゑ 蛸藥師店（とりせゑ 蛸薬師店／Torisei Takoyakushi）（預約 20:00）"
+      },
+      {
+        "label": "回家",
+        "text": "Travelodge Kyoto Shijo Karasuma"
+      }
+    ],
+    "notes": [],
+    "sections": [
+      {
+        "kind": "place",
+        "time": "出發",
+        "title": "Travelodge Kyoto Shijo Karasuma",
+        "from": null,
+        "to": null,
+        "steps": [],
+        "notes": [],
+        "items": [],
+        "refs": []
+      },
+      {
+        "kind": "transport",
+        "time": null,
+        "title": "Travelodge Kyoto Shijo Karasuma → 西向院",
+        "from": "Travelodge Kyoto Shijo Karasuma",
+        "to": "西向院",
+        "steps": [
+          "步行至阪急大宮站",
+          "阪急至河原町站轉京阪至清水五條站（或祇園四條站）",
+          "步行約 15–20 分至西向院（東山區清水 3-346，八坂之塔／三年坂之間）"
+        ],
+        "notes": [],
+        "items": [],
+        "refs": []
+      },
+      {
+        "kind": "place",
+        "time": "清晨",
+        "title": "京都經典景點拍照（西向院／さいこういん）（06:00）",
+        "from": null,
+        "to": null,
+        "steps": [],
+        "notes": [
+          "06:00。導航此點 https://maps.app.goo.gl/MTiQ4XJ2ksaDi44F8",
+          "八坂之塔（ほうかんじ／やさかのとう）經典取景。"
+        ],
+        "items": [
+          {
+            "name": "京都經典景點拍照（西向院／さいこういん）",
+            "notes": []
+          }
+        ],
+        "refs": []
+      },
+      {
+        "kind": "transport",
+        "time": null,
+        "title": "西向院 → Dreamy Kimono",
+        "from": "西向院",
+        "to": "Dreamy Kimono",
+        "steps": [
+          "走路約 15–20 分至 Dreamy（東山區祇園町北側 256 イズミナイトビル 2F）",
+          "或走到京阪祇園四條站／阪急河原町站再步行約 3–5 分"
+        ],
+        "notes": [],
+        "items": [],
+        "refs": []
+      },
+      {
+        "kind": "place",
+        "time": "早上",
+        "title": "Dreamy Kimono Rental Kyoto Gion Shijo",
+        "from": null,
+        "to": null,
+        "steps": [],
+        "notes": [
+          "着物レンタル Dreamy 京都祇園四條店。",
+          "預約 09:00–11:00"
+        ],
+        "items": [
+          {
+            "name": "Dreamy Kimono Rental Kyoto Gion Shijo",
+            "notes": []
+          }
+        ],
+        "refs": []
+      },
+      {
+        "kind": "transport",
+        "time": null,
+        "title": "Dreamy Kimono → 清水寺",
+        "from": "Dreamy Kimono",
+        "to": "清水寺",
+        "steps": [
+          "白川筋 → 花見小路南下 → 安井金比羅宮 → 二年坂／三年坂 → 庚申堂 → 清水寺"
+        ],
+        "notes": [],
+        "items": [],
+        "refs": []
+      },
+      {
+        "kind": "place",
+        "time": "中午",
+        "title": "東山區域逛街",
+        "from": null,
+        "to": null,
+        "steps": [],
+        "notes": [],
+        "items": [
+          {
+            "name": "白川筋（しらかわすじ）",
+            "notes": [
+              "店出來先往東，石板路＋茶屋。"
+            ]
+          },
+          {
+            "name": "祇園花見小路（はなみこうじ）",
+            "notes": []
+          },
+          {
+            "name": "良緣祈願石－安井金比羅宮（やすいこんぴらぐう）",
+            "notes": [
+              "寫形代、穿過石頭再貼上。"
+            ]
+          },
+          {
+            "name": "二年坂（にねんざか）／三年坂（さんねんざか）",
+            "notes": []
+          },
+          {
+            "name": "八坂庚申堂（やさかこうしんどう）",
+            "notes": [
+              "五彩牆、三不猴。上清水寺前的小岔路。"
+            ]
+          },
+          {
+            "name": "清水寺（きよみずでら）",
+            "notes": [
+              "快逛，約 30–40 分。"
+            ]
+          },
+          {
+            "name": "loose kyoto",
+            "notes": [
+              "清水坂。coffee & donut。"
+            ]
+          },
+          {
+            "name": "本家 西尾八橋 清水店",
+            "notes": [
+              "清水坂。抹茶伴手禮。"
+            ]
+          },
+          {
+            "name": "KIYOMIZU KYOAMI",
+            "notes": [
+              "清水坂。抹茶泡芙。"
+            ]
+          },
+          {
+            "name": "GOKAGO",
+            "notes": [
+              "清水坂。抹茶＋甜甜圈。"
+            ]
+          },
+          {
+            "name": "here 京都清水",
+            "notes": [
+              "清水坂。抹茶＋冰淇淋。"
+            ]
+          }
+        ],
+        "refs": [
+          "https://www.youtube.com/watch?v=hrn2gURu_ik",
+          "https://www.youtube.com/watch?v=3vkUfHEJzT4&t=774s"
+        ]
+      },
+      {
+        "kind": "transport",
+        "time": null,
+        "title": "東山 → 八坂神社",
+        "from": "東山",
+        "to": "八坂神社",
+        "steps": [],
+        "notes": [],
+        "items": [],
+        "refs": []
+      },
+      {
+        "kind": "place",
+        "time": "下午",
+        "title": "八坂神社與攝影師（13:00–14:00）",
+        "from": null,
+        "to": null,
+        "steps": [],
+        "notes": [
+          "13:00–14:00 與攝影師拍照。兔子神社。"
+        ],
+        "items": [
+          {
+            "name": "八坂神社（やさかじんじゃ）",
+            "notes": []
+          }
+        ],
+        "refs": []
+      },
+      {
+        "kind": "transport",
+        "time": null,
+        "title": "八坂神社 → Dreamy Kimono Rental Kyoto Gion Shijo",
+        "from": "八坂神社",
+        "to": "Dreamy Kimono Rental Kyoto Gion Shijo",
+        "steps": [],
+        "notes": [],
+        "items": [],
+        "refs": []
+      },
+      {
+        "kind": "place",
+        "time": "傍晚",
+        "title": "Dreamy Kimono Rental Kyoto Gion Shijo",
+        "from": null,
+        "to": null,
+        "steps": [],
+        "notes": [
+          "17:00 換衣服"
+        ],
+        "items": [],
+        "refs": []
+      },
+      {
+        "kind": "transport",
+        "time": null,
+        "title": "Dreamy Kimono Rental Kyoto Gion Shijo → 拉拉熊專賣店",
+        "from": "Dreamy Kimono Rental Kyoto Gion Shijo",
+        "to": "拉拉熊專賣店",
+        "steps": [
+          "京阪至祇園四條站，步行至阪急河原町站 4 號出口約 1 分",
+          "或河原町通往北走路至蛸藥師通"
+        ],
+        "notes": [],
+        "items": [],
+        "refs": []
+      },
+      {
+        "kind": "place",
+        "time": "晚上",
+        "title": "拉拉熊專賣店 京都四條河原町店（リラックマストア 京都四条河原町店）",
+        "from": null,
+        "to": null,
+        "steps": [],
+        "notes": [
+          "11:00–21:00。"
+        ],
+        "items": [
+          {
+            "name": "拉拉熊專賣店 京都四條河原町店（リラックマストア 京都四条河原町店）",
+            "notes": []
+          }
+        ],
+        "refs": []
+      },
+      {
+        "kind": "transport",
+        "time": null,
+        "title": "拉拉熊專賣店 → 鳥せゑ",
+        "from": "拉拉熊專賣店",
+        "to": "鳥せゑ",
+        "steps": [
+          "沿蛸藥師通往西走路約 8–10 分至東洞院"
+        ],
+        "notes": [],
+        "items": [],
+        "refs": []
+      },
+      {
+        "kind": "place",
+        "time": "晚餐",
+        "title": "鳥せゑ 蛸藥師店（とりせゑ 蛸薬師店／Torisei Takoyakushi）（預約 20:00）",
+        "from": null,
+        "to": null,
+        "steps": [],
+        "notes": [
+          "已預約 20:00。"
+        ],
+        "items": [
+          {
+            "name": "鳥せゑ 蛸藥師店（とりせゑ 蛸薬師店／Torisei Takoyakushi）",
+            "notes": []
+          }
+        ],
+        "refs": []
+      },
+      {
+        "kind": "transport",
+        "time": null,
+        "title": "鳥せゑ → 飯店",
+        "from": "鳥せゑ",
+        "to": "飯店",
+        "steps": [
+          "走路約 8–12 分回 Travelodge"
+        ],
+        "notes": [],
+        "items": [],
+        "refs": []
+      },
+      {
+        "kind": "place",
+        "time": "回家",
+        "title": "Travelodge Kyoto Shijo Karasuma",
+        "from": null,
+        "to": null,
+        "steps": [],
+        "notes": [],
+        "items": [],
+        "refs": []
+      }
+    ]
+  },
+  {
+    "day": 7,
+    "date": "10/19（週一）",
     "theme": "嵐山＋金閣",
-    "title": "Day 6｜10/18（週日）｜嵐山＋金閣",
+    "title": "Day 7｜10/19（週一）｜嵐山＋金閣",
     "summary": [
       {
         "label": "出發",
@@ -1601,7 +1956,7 @@ window.ITINERARY = [
       },
       {
         "label": "晚餐",
-        "text": "鳥せゑ 蛸藥師店（とりせゑ 蛸薬師店／Torisei Takoyakushi）"
+        "text": "京之燒肉處 弘 三條木屋町店（京の焼肉処 弘 三条木屋町店）（預約 21:00）"
       },
       {
         "label": "回家",
@@ -1970,361 +2325,12 @@ window.ITINERARY = [
       {
         "kind": "transport",
         "time": null,
-        "title": "京都站 → 鳥せゑ",
+        "title": "京都站 → 弘",
         "from": "京都站",
-        "to": "鳥せゑ",
-        "steps": [
-          "京都站搭烏丸線（綠）至四條站（四条駅）（2 站，約 4 分）",
-          "步行約 4–6 分至蛸藥師通東洞院"
-        ],
-        "notes": [],
-        "items": [],
-        "refs": []
-      },
-      {
-        "kind": "place",
-        "time": "晚餐",
-        "title": "鳥せゑ 蛸藥師店（とりせゑ 蛸薬師店／Torisei Takoyakushi）（預約 20:00）",
-        "from": null,
-        "to": null,
-        "steps": [],
-        "notes": [
-          "已預約 20:00。週日 11:30–22:30"
-        ],
-        "items": [
-          {
-            "name": "鳥せゑ 蛸藥師店（とりせゑ 蛸薬師店／Torisei Takoyakushi）",
-            "notes": []
-          }
-        ],
-        "refs": []
-      },
-      {
-        "kind": "transport",
-        "time": null,
-        "title": "鳥せゑ → 飯店",
-        "from": "鳥せゑ",
-        "to": "飯店",
-        "steps": [
-          "走路約 8–12 分回 Travelodge"
-        ],
-        "notes": [],
-        "items": [],
-        "refs": []
-      },
-      {
-        "kind": "place",
-        "time": "回家",
-        "title": "Travelodge Kyoto Shijo Karasuma",
-        "from": null,
-        "to": null,
-        "steps": [],
-        "notes": [
-          "這天 05:50 出門趕始發，量力而為。"
-        ],
-        "items": [],
-        "refs": []
-      }
-    ]
-  },
-  {
-    "day": 7,
-    "date": "10/19（週一）",
-    "theme": "和服東山",
-    "title": "Day 7｜10/19（週一）｜和服東山",
-    "summary": [
-      {
-        "label": "出發",
-        "text": "Travelodge Kyoto Shijo Karasuma"
-      },
-      {
-        "label": "清晨",
-        "text": "京都經典景點拍照（西向院）"
-      },
-      {
-        "label": "早上",
-        "text": "和服預約"
-      },
-      {
-        "label": "早上",
-        "text": "攝影服務"
-      },
-      {
-        "label": "午餐",
-        "text": ""
-      },
-      {
-        "label": "下午",
-        "text": "東山區域逛街"
-      },
-      {
-        "label": "傍晚",
-        "text": "和服還衣"
-      },
-      {
-        "label": "晚上",
-        "text": "拉拉熊專賣店 京都四條河原町店（リラックマストア 京都四条河原町店）"
-      },
-      {
-        "label": "晚餐",
-        "text": "京之燒肉處 弘 三條木屋町店（京の焼肉処 弘 三条木屋町店）"
-      },
-      {
-        "label": "回家",
-        "text": "Travelodge Kyoto Shijo Karasuma"
-      }
-    ],
-    "notes": [],
-    "sections": [
-      {
-        "kind": "place",
-        "time": "出發",
-        "title": "Travelodge Kyoto Shijo Karasuma",
-        "from": null,
-        "to": null,
-        "steps": [],
-        "notes": [],
-        "items": [],
-        "refs": []
-      },
-      {
-        "kind": "transport",
-        "time": null,
-        "title": "Travelodge Kyoto Shijo Karasuma → 西向院",
-        "from": "Travelodge Kyoto Shijo Karasuma",
-        "to": "西向院",
-        "steps": [
-          "步行至阪急大宮站",
-          "阪急至河原町站轉京阪至清水五條站（或祇園四條站）",
-          "步行約 15–20 分至西向院（東山區清水 3-346，八坂之塔／三年坂之間）"
-        ],
-        "notes": [],
-        "items": [],
-        "refs": []
-      },
-      {
-        "kind": "place",
-        "time": "清晨",
-        "title": "京都經典景點拍照（西向院／さいこういん）",
-        "from": null,
-        "to": null,
-        "steps": [],
-        "notes": [
-          "導航此點 https://maps.app.goo.gl/MTiQ4XJ2ksaDi44F8",
-          "八坂之塔（ほうかんじ／やさかのとう）經典取景。"
-        ],
-        "items": [
-          {
-            "name": "京都經典景點拍照（西向院／さいこういん）",
-            "notes": []
-          }
-        ],
-        "refs": []
-      },
-      {
-        "kind": "transport",
-        "time": null,
-        "title": "西向院 → 和服預約",
-        "from": "西向院",
-        "to": "和服預約",
-        "steps": [
-          "東山區走路（店名／地址之後補）"
-        ],
-        "notes": [],
-        "items": [],
-        "refs": []
-      },
-      {
-        "kind": "place",
-        "time": "早上",
-        "title": "和服預約",
-        "from": null,
-        "to": null,
-        "steps": [],
-        "notes": [
-          "預約 XX:XX點"
-        ],
-        "items": [],
-        "refs": []
-      },
-      {
-        "kind": "place",
-        "time": "早上",
-        "title": "攝影服務",
-        "from": null,
-        "to": null,
-        "steps": [],
-        "notes": [
-          "大概11:00結束。多半在和服店附近，不用另搭車。"
-        ],
-        "items": [],
-        "refs": []
-      },
-      {
-        "kind": "transport",
-        "time": null,
-        "title": "攝影服務 → 東山",
-        "from": "攝影服務",
-        "to": "東山",
-        "steps": [
-          "步行。先往北到白川筋的話約 15–20 分（視攝影點）。"
-        ],
-        "notes": [],
-        "items": [],
-        "refs": []
-      },
-      {
-        "kind": "place",
-        "time": "下午",
-        "title": "東山區域逛街",
-        "from": null,
-        "to": null,
-        "steps": [],
-        "notes": [],
-        "items": [
-          {
-            "name": "白川筋（しらかわすじ）",
-            "notes": [
-              "石板路+傳統茶屋"
-            ]
-          },
-          {
-            "name": "良緣祈願石－安井金比羅宮（やすいこんぴらぐう）",
-            "notes": [
-              "參拜主殿-->寫下\"形代\"-->穿過石頭來回-->貼\"形代\"在石頭上",
-              "求緣分 / 運勢"
-            ]
-          },
-          {
-            "name": "八坂庚申堂（やさかこうしんどう）",
-            "notes": [
-              "五彩牆",
-              "不看不聽不說猴",
-              "求堅定信念"
-            ]
-          },
-          {
-            "name": "二年坂（にねんざか）／三年坂（さんねんざか）",
-            "notes": []
-          },
-          {
-            "name": "清水寺（きよみずでら）",
-            "notes": []
-          },
-          {
-            "name": "八坂神社（やさかじんじゃ）",
-            "notes": [
-              "兔子神社"
-            ]
-          },
-          {
-            "name": "祇園花見小路（はなみこうじ）",
-            "notes": []
-          },
-          {
-            "name": "loose kyoto",
-            "notes": [
-              "清水寺附近",
-              "coffee & donut"
-            ]
-          },
-          {
-            "name": "本家 西尾八橋 清水店",
-            "notes": [
-              "抹茶伴手禮"
-            ]
-          },
-          {
-            "name": "KIYOMIZU KYOAMI",
-            "notes": [
-              "抹茶泡芙"
-            ]
-          },
-          {
-            "name": "GOKAGO",
-            "notes": [
-              "喝的抹茶+抹茶甜甜圈"
-            ]
-          },
-          {
-            "name": "here 京都清水",
-            "notes": [
-              "喝的抹茶+抹茶冰淇淋"
-            ]
-          }
-        ],
-        "refs": [
-          "https://www.youtube.com/watch?v=hrn2gURu_ik",
-          "https://www.youtube.com/watch?v=3vkUfHEJzT4&t=774s"
-        ]
-      },
-      {
-        "kind": "transport",
-        "time": null,
-        "title": "東山 → 和服還衣",
-        "from": "東山",
-        "to": "和服還衣",
-        "steps": [
-          "走回早上那間和服店（店址之後補）"
-        ],
-        "notes": [],
-        "items": [],
-        "refs": []
-      },
-      {
-        "kind": "place",
-        "time": "傍晚",
-        "title": "和服還衣",
-        "from": null,
-        "to": null,
-        "steps": [],
-        "notes": [
-          "約 17:00–18:00。店名／時間之後補。"
-        ],
-        "items": [],
-        "refs": []
-      },
-      {
-        "kind": "transport",
-        "time": null,
-        "title": "和服還衣 → 拉拉熊專賣店",
-        "from": "和服還衣",
-        "to": "拉拉熊專賣店",
-        "steps": [
-          "京阪至祇園四條站，步行至阪急河原町站 4 號出口約 1 分",
-          "或河原町通往北走路至蛸藥師通"
-        ],
-        "notes": [],
-        "items": [],
-        "refs": []
-      },
-      {
-        "kind": "place",
-        "time": "晚上",
-        "title": "拉拉熊專賣店 京都四條河原町店（リラックマストア 京都四条河原町店）",
-        "from": null,
-        "to": null,
-        "steps": [],
-        "notes": [
-          "11:00–21:00。"
-        ],
-        "items": [
-          {
-            "name": "拉拉熊專賣店 京都四條河原町店（リラックマストア 京都四条河原町店）",
-            "notes": []
-          }
-        ],
-        "refs": []
-      },
-      {
-        "kind": "transport",
-        "time": null,
-        "title": "拉拉熊專賣店 → 弘",
-        "from": "拉拉熊專賣店",
         "to": "弘",
         "steps": [
-          "沿河原町通／木屋町通往北走路約 10–15 分（三條木屋町上ル）",
-          "或阪急河原町往北走路至三條；京阪四條至三條站（三条駅）1 站，再步行約 5 分"
+          "京都站搭烏丸線（綠）至四條站（四条駅）（2 站，約 4 分）",
+          "轉東西線（橙）至京都市役所前站（1 站），步行約 3 分至三條木屋町"
         ],
         "notes": [],
         "items": [],
@@ -2369,7 +2375,9 @@ window.ITINERARY = [
         "from": null,
         "to": null,
         "steps": [],
-        "notes": [],
+        "notes": [
+          "這天 05:50 出門趕始發，量力而為。"
+        ],
         "items": [],
         "refs": []
       }
