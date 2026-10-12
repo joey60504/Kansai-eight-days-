@@ -31,6 +31,13 @@
     .spot { margin-top:1rem; padding:.75rem .9rem; background:#fff; border-left:4px solid var(--red); }
     .cap { margin:.35rem 1.1rem 0; color:var(--muted); font-size:.85rem; }
     .foot { color:var(--muted); font-size:.85rem; margin-top:1rem; }
+    .finds { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:.8rem; }
+    .find { margin:0; background:#fff; border:1px solid var(--line); border-radius:.8rem; overflow:hidden; }
+    .find img { height:220px; }
+    .find figcaption { padding:.7rem .8rem .85rem; }
+    .find b { display:block; font-size:1rem; }
+    .find span { display:block; color:var(--muted); font-size:.82rem; margin:.15rem 0 .35rem; }
+    .find p { margin:0; font-size:.92rem; }
     @media (max-width:800px) {
       .stats, .cols { grid-template-columns:1fr 1fr; }
       img { height:220px; }
@@ -164,8 +171,8 @@ const SITES = [
     symbols:
       "獅子殿供的是素盞嗚尊的荒魂，也就是神猛烈、能除災的那一面。獅子張大嘴，人可以走進去：獅子舞裡的獅子會把疫病和惡靈吞掉。八岐大蛇是八頭八尾的巨蛇，素盞嗚用酒灌醉牠再斬殺，從尾巴裡取出天叢雲劍。綱引的繩子就代表那條蛇。",
     spot: "不要找京都八坂神社那種兩層樓門。這裡的記號是一顆獅子頭。先走進去再出來。",
-    image: "https://upload.wikimedia.org/wikipedia/commons/5/50/Namba-yasaka-jinja_haiden1.jpg",
-    caption: "難波八阪神社拜殿。現場更顯眼的是 1974 年那座可進入的獅子殿。",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Namba_Yasaka-Jinja.png/960px-Namba_Yasaka-Jinja.png",
+    caption: "難波八阪神社獅子殿。嘴巴可以走進去，高約 12 公尺。",
   },
   {
     id: "kitano",
@@ -545,6 +552,100 @@ const SITES = [
   },
 ];
 
+    const FINDS = {
+      osaka: [
+        {
+          name: "金鯱",
+          where: "天守裡面的展示櫃，屋頂兩端也各有一隻",
+          look: "虎頭、魚鱗、魚尾。傳說會吐水，所以放在最怕火災的天守上。這張是近距離的舊飾，讓你先記住形狀；屋頂那對離得遠，是側身站在屋脊兩端。",
+          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Castillo_de_Osaka_-_Adornos.jpg/960px-Castillo_de_Osaka_-_Adornos.jpg"
+        }
+      ],
+      shitennoji: [
+        {
+          name: "西門石鳥居",
+          where: "你進寺的西門",
+          look: "1294 年的石雕，兩根石柱加一根石梁，比後面橘紅色的重建伽藍老得多。金堂裡還有四大天王：找手裡托著小塔的那一尊，是北方的多聞天。",
+          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Stone_Torii_of_Shitennoji_Temple.JPG/960px-Stone_Torii_of_Shitennoji_Temple.JPG"
+        }
+      ],
+      katsuo: [
+        {
+          name: "勝達摩",
+          where: "境內的達摩架",
+          look: "整面牆的紅圓臉，身上寫著「勝」。許願點左眼，實現再點右眼，所以很多只有一隻眼睛。",
+          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Daruma_dolls_at_Katsuo-ji_20100102.jpg/960px-Daruma_dolls_at_Katsuo-ji_20100102.jpg"
+        }
+      ],
+      namba: [
+        {
+          name: "獅子殿",
+          where: "一進神社就看得到",
+          look: "高約 12 公尺，牙齒和眼眶是黃銅。眼睛其實是燈，鼻子是喇叭。從嘴巴走進去，裡面供的是素盞嗚尊的荒魂。天花板有手雕的鳳凰，每一隻花紋不一樣。",
+          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Namba_Yasaka-Jinja.png/960px-Namba_Yasaka-Jinja.png"
+        }
+      ],
+      kazamidori: [
+        {
+          name: "風見雞",
+          where: "紅磚尖塔的最頂端",
+          look: "一隻金屬公雞，會隨風轉向。德國屋頂用來看風向，公雞也代表警覺、驅邪。",
+          image: "https://upload.wikimedia.org/wikipedia/commons/b/be/Kobe_City_Thomas_House.jpg"
+        }
+      ],
+      byodoin: [
+        {
+          name: "鳳凰",
+          where: "鳳凰堂屋頂兩端；真品在鳳翔館",
+          look: "長脖子、頭上有冠、翅膀半張、尾巴很長。屋頂上那對是複製品，姿態和這張舊照片一樣。真品在平等院博物館。",
+          image: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Phoenix_North_Byodoin.jpg"
+        },
+        {
+          name: "阿彌陀如來",
+          where: "鳳凰堂內部，要領時間券",
+          look: "定朝的真品，高約 2.8 公尺。雙手疊在腿上結成一個圈，坐在蓮花座上，背後是一大圈光背。這尊留在堂內，不是複製品。",
+          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Byodoin_Monastery_Amida_of_Howodo_%28313%29.jpg/960px-Byodoin_Monastery_Amida_of_Howodo_%28313%29.jpg"
+        },
+        {
+          name: "雲中供養菩薩",
+          where: "阿彌陀左右、牆壁高處；原作在鳳翔館",
+          look: "小菩薩坐在雲上，有的抱樂器。這張是彈箏的一尊。總共 52 尊，代表來迎接的行列。堂內高處看到的是複製品，原作在博物館。",
+          image: "https://upload.wikimedia.org/wikipedia/commons/5/5b/BYODOIN_ONJYO_BOSATSU_N1.JPG"
+        }
+      ],
+      koshin: [
+        {
+          name: "三不猴與括猿",
+          where: "八坂庚申堂裡面，外牆也掛滿彩球",
+          look: "彩球是把願望綁住的猴子。這張摀住嘴巴的是「不言」。三隻是一組：摀眼、摀耳、摀嘴，在青面金剛腳邊。",
+          image: "https://upload.wikimedia.org/wikipedia/commons/1/12/Kukurizaru_talismans_and_monkey_statue_%28Yasaka_Koshindo_Temple%2C_Kyoto%29.jpg"
+        }
+      ],
+      kiyomizu: [
+        {
+          name: "仁王門前的狛犬",
+          where: "清水寺仁王門的石階兩側",
+          look: "這張階梯前的石獅子是狛犬，不是仁王。仁王在紅色門洞裡面，左邊開口（阿形）、右邊閉口（吽形），要走進門才看得到。",
+          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Nio-mon%2C_Kiyomizu-dera_Temple%2C_Kyoto%2C_West_view_20190416_2.jpg/960px-Nio-mon%2C_Kiyomizu-dera_Temple%2C_Kyoto%2C_West_view_20190416_2.jpg"
+        }
+      ],
+      kinkaku: [
+        {
+          name: "屋頂鳳凰",
+          where: "金閣最頂端，面朝鏡湖池",
+          look: "金色，個子不大，要離遠一點抬頭找。和平等院的鳳凰是同一種鳥：頭上有冠、尾巴長。金閣進不去，這隻是外觀上唯一要對的雕像。",
+          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Rokuon-ji_%28Kita-ku_Kyoto%29_Kinkaku-ji_Phoenix_hdsr_S5_01.jpg/960px-Rokuon-ji_%28Kita-ku_Kyoto%29_Kinkaku-ji_Phoenix_hdsr_S5_01.jpg"
+        }
+      ],
+      fushimi: [
+        {
+          name: "銜鑰匙的狐狸",
+          where: "樓門、本殿前，以及鳥居旁都有",
+          look: "狐狸不是神，是使者。嘴裡的鑰匙是米倉的鑰匙。也有銜寶玉或稻穗的。拜的時候面向本殿，不要把狐像當主神。",
+          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Kitsune_holding_a_Key_at_Fushimi-Inari_Taisha_-_panoramio.jpg/960px-Kitsune_holding_a_Key_at_Fushimi-Inari_Taisha_-_panoramio.jpg"
+        }
+      ]
+    };
     const daysEl = document.getElementById("days");
     const sitesEl = document.getElementById("sites");
     const cardEl = document.getElementById("card");
@@ -598,13 +699,24 @@ const SITES = [
             "<section><h3>大事件</h3><p>" + site.events + "</p></section>" +
           "</div>" +
           "<section><h3>雕像、動物、建築代表什麼</h3><p>" + site.symbols + "</p></section>" +
+          findsHtml(site.id) +
           '<div class="spot"><strong>走到的時候先看這個。</strong> ' + site.spot + "</div>" +
         "</div>";
-      const image = cardEl.querySelector("img");
-      if (image) image.addEventListener("error", () => image.remove());
+      cardEl.querySelectorAll("img").forEach((image) => {
+        image.addEventListener("error", () => image.remove());
+      });
     }
     function stat(value, label) {
       return '<div class="stat"><b>' + value + "</b><span>" + label + "</span></div>";
+    }
+    function findsHtml(id) {
+      const items = FINDS[id];
+      if (!items) return "";
+      const cards = items.map((item) => {
+        return '<figure class="find"><img alt="' + item.name + '" src="' + item.image + '" />' +
+          "<figcaption><b>" + item.name + "</b><span>" + item.where + "</span><p>" + item.look + "</p></figcaption></figure>";
+      }).join("");
+      return '<section><h3>現場要找的雕像</h3><div class="finds">' + cards + "</div></section>";
     }
     render();
   </script>
